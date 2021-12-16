@@ -1,0 +1,18 @@
+/*
+    author: Ayumu Saito
+
+    This css file is used for App.js
+*/
+* {
+    font-family: "Comic Sans MS", "Comic Sans", "Marker Felt", "cursive",
+        sans-serif;
+    text-align: center;
+}
+
+body {
+    background: #f1f5f8;
+    color: #222;
+    background: url("./Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

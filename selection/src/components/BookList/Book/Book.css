@@ -1,0 +1,32 @@
+/*
+    author: Ayumu Saito
+
+    This css file is used for Book.js
+*/
+#book {
+    background: cornsilk;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 8px 8px 8px rgb(20, 19, 19);
+    text-decoration: none;
+}
+
+#book h1 {
+    margin-top: 0.5cm;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#book h2 {
+    margin-top: 0.5rem;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#book p {
+    margin-top: 0.5rem;
+}
+
+#book #bookCover {
+    width: 180px;
+}

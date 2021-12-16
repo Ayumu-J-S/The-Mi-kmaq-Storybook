@@ -1,0 +1,40 @@
+/*
+    author: Ayumu Saito
+
+    This css file is used fro List.js
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.list {
+    width: 90vw;
+    max-width: 1170px;
+    margin: 5rem auto;
+    display: grid;
+    gap: 2rem;
+}
+
+header {
+    margin-top: 35px;
+    margin-bottom: -30px;
+    font-size: 70px;
+    text-shadow: 2px 2px black;
+    font-weight: bold;
+    color: white;
+}
+
+footer p {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+    .list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
