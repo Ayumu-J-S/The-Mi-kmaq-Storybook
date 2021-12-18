@@ -4,7 +4,6 @@ import React, { useState } from "react";
 export const pagesMapping = {
     home: "projects",
     embededProj: "embededProj",
-    bookSelect: "bookSelect",
 };
 
 // Initialize the context

@@ -2,7 +2,6 @@ import { useContext } from "react";
 import Projects from "./pages/Projects.js";
 import EmbeddedProj from "./pages/EmbeddedProj.js";
 import { pagesMapping, RoutingContext } from "./context/Routing.js";
-import BookList from "./components/BookList/BookList.js";
 import "./App.css";
 
 /**
@@ -22,7 +21,6 @@ function App() {
         <div>
             {pagesMapping.home === page && <Projects />}
             {pagesMapping.embededProj === page && <EmbeddedProj />}
-            {pagesMapping.bookSelect === page && <BookList />}
         </div>
     );
 }

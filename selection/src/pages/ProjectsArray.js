@@ -56,7 +56,7 @@ const projectsArray = [
         img: "./selection-img/group7.jpg",
         title: "The Mi'kmaq Storybook",
         author: "James W. Isaacs, Ayumu Saito, Mahesh Khatri, Raisa Shamatul",
-        page: "bookSelect",
+        link: "./storybook",
     },
 ];
 
