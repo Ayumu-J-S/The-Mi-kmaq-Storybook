@@ -8,7 +8,6 @@ import Button from "../Button.js";
  * A function to concatenate two arrays and returns the concatenated
  * array as new array
  *
- * @author Ayumu Saito
  * @param {Array} arr1
  * @param {Array} arr2
  * @returns a new array that is arr1 concatenated with arr2
@@ -31,14 +30,6 @@ const BookList = () => {
     const [books, setList] = useState([
         {
             id: 1,
-            img: "../Images/imageschap1/Pic2.jpg",
-            title: "A Sunny Day down by the River",
-            author: "James W. Isaacs ",
-            numPages: 5,
-            link: "http://ugdev.cs.smu.ca/~group17/Pages/chap1page1.html",
-        },
-        {
-            id: 2,
             img: "../Images/eagle.jpg",
             title: "A Sunny Day down by the River, work in progress",
             author: "James W. Isaacs",
@@ -46,12 +37,12 @@ const BookList = () => {
             link: "http://ugdev.cs.smu.ca/~group17/Pages/Chap2.html",
         },
         {
-            id: 3,
-            img: "../Images/eagle.jpg",
-            title: "Chap2, work in progress",
-            author: "James W. Isaacs",
-            numPages: "5",
-            link: "http://ugdev.cs.smu.ca/~group17/Pages/Chap2.php",
+            id: 2,
+            img: "",
+            title: "new",
+            author: "whoever",
+            numPages: "",
+            link: "",
         },
     ]);
 
