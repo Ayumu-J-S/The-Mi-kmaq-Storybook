@@ -10,9 +10,7 @@
 }
 
 body {
-    background: #f1f5f8;
-    color: #222;
-    background: url("./Background.jpg");
-    background-repeat: no-repeat;
+    background-image: url("./Background.jpg");
     background-size: cover;
+    background-position: center center;
 }

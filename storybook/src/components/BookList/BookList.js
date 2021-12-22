@@ -3,6 +3,7 @@ import "./BookList.css";
 import Book from "./Book/Book.js";
 import { RoutingContext, pagesMapping } from "../../context/Routing.js";
 import Button from "../Button.js";
+import axios from "axios";
 
 /**
  * A function to concatenate two arrays and returns the concatenated
@@ -15,6 +16,30 @@ import Button from "../Button.js";
 function concatenateArray(arr1, arr2) {
     let arr3 = arr1.concat(arr2);
     return arr3;
+}
+
+/**
+ * A function that counts the number of pages, given a object
+ * that holds pages in arrays. The function assumes that the
+ * key name for the array is "filenames".
+ *
+ * @param {Object} inputObj
+ * @returns numb er of pages in the object
+ */
+function countPages(inputObj) {
+    let pagesArr = inputObj.filenames;
+    return pagesArr.length;
+}
+
+/**
+ * A function that adds "numPages" key and value in the input Array.
+ *
+ * @param {Array} inputArr
+ */
+function fixArr(inputArr) {
+    for (let i = 0; i < inputArr.length; i++) {
+        inputArr[i]["numPages"] = countPages(inputArr[i]);
+    }
 }
 
 /**
@@ -36,22 +61,17 @@ const BookList = () => {
             numPages: "5",
             link: "http://ugdev.cs.smu.ca/~group17/Pages/Chap2.html",
         },
-        {
-            id: 2,
-            img: "",
-            title: "new",
-            author: "whoever",
-            numPages: "",
-            link: "",
-        },
     ]);
-
-    // This will be pulled from server in the future.
-    const other = [];
 
     // This call back only runs when the components first mount.
     useEffect(() => {
-        setList(concatenateArray(books, other));
+        // Fetch the data from the server.
+        axios.get("/test").then((response) => {
+            // Add 'numPages' key and value to the objects
+            fixArr(response.data.arr);
+            // Concatenate with hardcoded story
+            setList(concatenateArray(books, response.data.arr));
+        });
     }, []);
 
     // Map the book array and toss each objects property in Book component.
