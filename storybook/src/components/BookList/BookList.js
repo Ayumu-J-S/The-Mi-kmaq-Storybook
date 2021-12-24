@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import "./BookList.css";
-import Book from "./Book/Book.js";
+import Book from "./book/Book.js";
 import { RoutingContext, pagesMapping } from "../../context/Routing.js";
-import Button from "../Button.js";
+import Button from "../buttons/ButtonDarkGreen.js";
 import axios from "axios";
 
 /**
@@ -93,7 +93,9 @@ const BookList = () => {
                 })}
             </section>
             {/* When clicked go to the home page. */}
-            <Button onClick={() => setPage(pagesMapping.home)}>Go Back</Button>
+            <Button onClick={() => (window.location.href = "#")}>
+                Go Back
+            </Button>
         </div>
     );
 };

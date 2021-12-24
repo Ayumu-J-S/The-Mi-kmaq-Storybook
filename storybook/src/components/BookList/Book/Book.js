@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Book.css";
+import { RoutingContext } from "../../../context/Routing";
 
 /**
  * Components that takes attributes of the following as properties.
@@ -18,15 +19,34 @@ const Book = (props) => {
     // props have to have these properties below (spelled exactly)
     const { title, img, author, numPages, link } = props;
 
+    let { setPage, setStoryName } = useContext(RoutingContext);
+
     // Return a anchor link holding info about the book
-    return (
-        <a href={link} id="book">
-            <img id="bookCover" src={img} alt="" />
-            <h1>{title}</h1>
-            <h2>{author}</h2>
-            <h2>{numPages} pages</h2>
-        </a>
-    );
+    if (link) {
+        return (
+            <a href={link} id="book">
+                <img id="bookCover" src={img} alt="" />
+                <h1>{title}</h1>
+                <h2>{author}</h2>
+                <h2>{numPages} pages</h2>
+            </a>
+        );
+    } else {
+        return (
+            <div
+                id="book"
+                onClick={() => {
+                    setPage("storybook");
+                    setStoryName(title);
+                }}
+            >
+                <img id="bookCover" src={img} alt="" />
+                <h1>{title}</h1>
+                <h2>{author}</h2>
+                <h2>{numPages} pages</h2>
+            </div>
+        );
+    }
 };
 
 export default Book;

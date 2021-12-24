@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { pagesMapping, RoutingContext } from "./context/Routing.js";
-import BookList from "./components/BookList/BookList.js";
+import BookList from "./components/bookList/BookList.js";
+import Storybook from "./components/storybook/Storybook.js";
 import "./App.css";
 
 /**
@@ -16,7 +17,12 @@ function App() {
 
     // Return components according to the state
     // Returns only one of the component
-    return <div>{pagesMapping.home === page && <BookList />}</div>;
+    return (
+        <div>
+            {pagesMapping.home === page && <BookList />}
+            {pagesMapping.storybook === page && <Storybook />}
+        </div>
+    );
 }
 
 export default App;
