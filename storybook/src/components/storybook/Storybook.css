@@ -1,0 +1,20 @@
+#mainPane {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: 1fr 1fr;
+    /* This down below will make the element centered vertically */
+    max-height: 90vh;
+    position: absolute;
+    top: 50%;
+    margin-left: 50px;
+    transform: translateY(-50%);
+    max-width: 90vw;
+    margin-top: 20px;
+}
+
+#leftPane,
+#rightPane {
+    border: 2px solid black;
+    max-height: 100%;
+    background-color: cornsilk;
+}
