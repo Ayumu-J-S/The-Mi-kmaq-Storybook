@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { RoutingContext } from "../../context/Routing";
+import { RoutingContext } from "../../context/Routing.js";
 import "./Storybook.css";
+import StoryPicture from "./imgComponents/StoryPicture.js";
 
 function findStoryArr(arr, target) {
     for (let obj of arr) {
@@ -23,16 +24,19 @@ const Storybook = (props) => {
         axios.get("/test").then((response) => {
             let arr = findStoryArr(response.data.arr, storyName);
             setStoryArr(arr);
+            setPageArr(arr[pageCount - 1]);
         });
     }, []);
 
-    useEffect(() => {
-        setPageArr(storyArr[pageCount - 1]);
-    }, [storyArr]);
-
     return (
-        <div id="mainPane">
-            <div id="left-pane">{pageArr}</div>
+        <div id="main-pane">
+            <div id="left-pane">
+                <StoryPicture
+                    src="https://www.camera-rumors.com/wp-content/uploads/2018/02/sony-a7iii-sample-image-3.jpg"
+                    // src={"linkToTheDir/" + pageArr[0]}
+                    alt={"linkToTheDir/" + pageArr[0]}
+                ></StoryPicture>
+            </div>
             <div id="right-pane">a</div>
         </div>
     );

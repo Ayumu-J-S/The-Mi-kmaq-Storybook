@@ -1,4 +1,8 @@
-#mainPane {
+:root {
+    --border-radius-pane: 50px;
+}
+
+#main-pane {
     display: grid;
     grid-gap: 0px;
     grid-template-columns: 1fr 1fr;
@@ -6,15 +10,83 @@
     max-height: 90vh;
     position: absolute;
     top: 50%;
-    margin-left: 50px;
-    transform: translateY(-50%);
-    max-width: 90vw;
+    right: 50%;
+    transform: translate(50%, -50%);
+    /* transform: translateY(-50%); */
+    /* max-width: 90vw; */
+    width: 85%;
     margin-top: 20px;
 }
 
-#leftPane,
-#rightPane {
+#left-pane,
+#right-pane {
     border: 2px solid black;
     max-height: 100%;
     background-color: cornsilk;
+}
+
+#left-pane {
+    border-bottom-left-radius: var(--border-radius-pane);
+    justify-content: center;
+    /* display: table with center-align-vertical class will vertically
+     align this div */
+    display: table;
+    width: 100%;
+    text-align: center;
+    /* box-shadow: -20px 20px 20px rgba(121, 119, 114, 0.938); */
+}
+
+#right-pane {
+    border-top-right-radius: var(--border-radius-pane);
+    border-left: none;
+    /* display: table with center-align-vertical class will vertically
+     align this div */
+    display: table;
+}
+
+@media only screen and (min-width: 1500px) {
+    #main-pane {
+        display: grid;
+        grid-gap: 0px;
+        grid-template-columns: 1fr 1fr;
+        /* This down below will make the element centered vertically */
+        margin-left: 3px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100vw;
+        max-height: 100vh;
+    }
+
+    #left-pane,
+    #right-pane {
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #main-pane {
+        display: block;
+        margin-left: 4vw;
+    }
+
+    #left-pane,
+    #right-pane {
+        border-radius: 0px;
+    }
+
+    #left-pane {
+        border-top-left-radius: var(--border-radius-pane);
+        border-top-right-radius: var(--border-radius-pane);
+    }
+
+    #right-pane {
+        border-bottom-left-radius: var(--border-radius-pane);
+        border-bottom-right-radius: var(--border-radius-pane);
+        width: 100%;
+        border-left: 2px solid black;
+        border-top: 0.01px solid black;
+        margin-top: 0px;
+    }
 }
