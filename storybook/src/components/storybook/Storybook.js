@@ -23,7 +23,7 @@ const Storybook = (props) => {
     const [pageCount, setPageCount] = useState(1);
 
     useEffect(() => {
-        axios.get("/test").then((response) => {
+        fetch(`http://localhost:3505/test`).then((response) => {
             let arr = findStoryArr(response.data.arr, storyName);
             setStoryArr(arr);
             setPageArr(arr[pageCount - 1]);
