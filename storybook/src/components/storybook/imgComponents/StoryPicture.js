@@ -6,7 +6,7 @@ const StoryPicture = styled.img`
     height: auto;
     justify-content: center;
     object-fit: cover;
-    width: 95%;
+    width: 80%;
     border-radius: 20px;
     aspect-ratio: 4/2.7;
 

@@ -3,6 +3,8 @@ import axios from "axios";
 import { RoutingContext } from "../../context/Routing.js";
 import "./Storybook.css";
 import StoryPicture from "./imgComponents/StoryPicture.js";
+import StoryText from "./textComponents/StoryText.js";
+import Button from "./buttonComponents/StoryButton.js";
 
 function findStoryArr(arr, target) {
     for (let obj of arr) {
@@ -36,8 +38,21 @@ const Storybook = (props) => {
                     // src={"linkToTheDir/" + pageArr[0]}
                     alt={"linkToTheDir/" + pageArr[0]}
                 ></StoryPicture>
+                <StoryText>
+                    {
+                        "The overflow property or\
+                    to add scrollbars when an elemenThe overflow  or\
+                    to add scrollbars when an elemenThe overflow or\
+                    to add scrollto add scro"
+                    }
+                </StoryText>
+                <Button fontSize="24px" margin="15px 10px 25px 10px">
+                    English Translation
+                </Button>
+                <Button>Play Audio</Button>
             </div>
             <div id="right-pane">a</div>
+            <footer>footer</footer>
         </div>
     );
 };

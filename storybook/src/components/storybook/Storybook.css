@@ -15,7 +15,7 @@
     /* transform: translateY(-50%); */
     /* max-width: 90vw; */
     width: 85%;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 #left-pane,
@@ -56,13 +56,18 @@
         left: 50%;
         transform: translate(-50%, -50%);
         width: 100vw;
-        max-height: 100vh;
+        max-height: 100%;
     }
 
     #left-pane,
     #right-pane {
         height: auto;
     }
+}
+
+footer {
+    width: 200%;
+    margin: 7px auto 10px auto;
 }
 
 @media only screen and (max-width: 800px) {
@@ -88,5 +93,9 @@
         border-left: 2px solid black;
         border-top: 0.01px solid black;
         margin-top: 0px;
+    }
+
+    footer {
+        width: 100%;
     }
 }
