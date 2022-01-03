@@ -1,0 +1,148 @@
+/*
+ This is a CSS styles for the form layout with background color changes 
+ @author Mahesh Khattri (A00432768)  
+*/
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  color: navy;
+}
+
+/*
+ animates the border around the form layout
+*/
+#animate-me {
+  margin-top: -18.5rem !important;
+
+  animation: 10s infinite bgcolorchange, slideUp;
+}
+@keyframes bgcolorchange {
+  0% {
+    background: rgb(0, 219, 248);
+  }
+  25% {
+    background: linear-gradient(red, yellow, orange, green);
+  }
+  75% {
+    background: linear-gradient(yellow, orange, green, red);
+  }
+  100% {
+    background: rgb(0, 219, 248);
+  }
+}
+h4 {
+  margin: 0;
+}
+.grid {
+  margin: 1.5vw;
+  display: grid;
+  width: 95vw;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+#left-pane,
+#right-pane {
+  display: grid;
+  border: 1px solid #ccc;
+  background-color: white;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  grid-template-rows: auto repeat(3, 1fr);
+  padding: 1rem;
+}
+#right-pane {
+  grid-template-rows: 3fr auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+p {
+  max-height: fit-content;
+  padding: 0 0.1rem;
+  margin: 0;
+}
+
+.text {
+  display: block;
+  background: greenyellow;
+  padding-left: 0.2rem;
+  height: 2.5rem;
+}
+textarea {
+  width: 100%;
+  box-shadow: 0 0 0 1px #96baff;
+ 
+}
+
+input {
+  width: 100%;
+  white-space: normal;
+  background-color: #00d2f7;
+  height: 3rem;
+}
+
+.hint,
+#submits {
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 6rem;
+  background: #7dedff;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 3rem;
+}
+
+.chapter-info {
+  margin-top: 0.5rem;
+}
+.audio-file {
+  margin-bottom: 1.2rem;
+  background: whitesmoke; 
+}
+.audio-file:first-of-type{
+  margin-top:16.5rem;
+}
+textarea {
+  background: whitesmoke;
+}
+.text-files {
+  margin-top: 1rem;
+}
+
+.chapter-info > a {
+  display: block;
+  background: whitesmoke;
+  height: 1.5rem;
+}
+
+#submits button {
+  background-color: #96baff;
+  text-align: center;
+  border: none;
+  height: 3rem;
+  width: 100%;
+}
+
+img,
+p,
+body {
+  transform: translateY(300px);
+  animation: slideUp 0.7s ease-out forwards 0.7s;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+  0% {
+    transform: translateY(300px);
+  }
+}

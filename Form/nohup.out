@@ -1,0 +1,61 @@
+Nodesjs server running on PORT: 3099
+MongoDB connected
+Nodesjs server running on PORT: 3099
+MongoDB connected
+TypeError: Cannot read properties of undefined (reading '0')
+    at makeFileNames (/home/students_ae20/m_khattri/public_html/server.js:103:34)
+    at /home/students_ae20/m_khattri/public_html/server.js:73:75
+    at Layer.handle [as handle_request] (/home/students_ae20/m_khattri/public_html/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/students_ae20/m_khattri/public_html/node_modules/express/lib/router/route.js:137:13)
+    at Immediate._onImmediate (/home/students_ae20/m_khattri/public_html/node_modules/multer/lib/make-middleware.js:53:37)
+    at processImmediate (node:internal/timers:466:21)
+TypeError: Cannot read properties of undefined (reading '0')
+    at makeFileNames (/home/students_ae20/m_khattri/public_html/server.js:103:34)
+    at /home/students_ae20/m_khattri/public_html/server.js:73:75
+    at Layer.handle [as handle_request] (/home/students_ae20/m_khattri/public_html/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/students_ae20/m_khattri/public_html/node_modules/express/lib/router/route.js:137:13)
+    at Array.<anonymous> (/home/students_ae20/m_khattri/public_html/node_modules/multer/lib/make-middleware.js:53:37)
+    at listener (/home/students_ae20/m_khattri/public_html/node_modules/on-finished/index.js:169:15)
+    at onFinish (/home/students_ae20/m_khattri/public_html/node_modules/on-finished/index.js:100:5)
+    at callback (/home/students_ae20/m_khattri/public_html/node_modules/ee-first/index.js:55:10)
+    at IncomingMessage.onevent (/home/students_ae20/m_khattri/public_html/node_modules/ee-first/index.js:93:5)
+    at IncomingMessage.emit (node:events:402:35)
+TypeError: Cannot read properties of undefined (reading '0')
+    at makeFileNames (/home/students_ae20/m_khattri/public_html/server.js:103:34)
+    at /home/students_ae20/m_khattri/public_html/server.js:73:75
+    at Layer.handle [as handle_request] (/home/students_ae20/m_khattri/public_html/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/students_ae20/m_khattri/public_html/node_modules/express/lib/router/route.js:137:13)
+    at Array.<anonymous> (/home/students_ae20/m_khattri/public_html/node_modules/multer/lib/make-middleware.js:53:37)
+    at listener (/home/students_ae20/m_khattri/public_html/node_modules/on-finished/index.js:169:15)
+    at onFinish (/home/students_ae20/m_khattri/public_html/node_modules/on-finished/index.js:100:5)
+    at callback (/home/students_ae20/m_khattri/public_html/node_modules/ee-first/index.js:55:10)
+    at IncomingMessage.onevent (/home/students_ae20/m_khattri/public_html/node_modules/ee-first/index.js:93:5)
+    at IncomingMessage.emit (node:events:402:35)
+Nodesjs server running on PORT: 3099
+MongoDB connected
+node:events:368
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3099
+    at Server.setupListenHandle [as _listen2] (node:net:1334:16)
+    at listenInCluster (node:net:1382:12)
+    at Server.listen (node:net:1469:7)
+    at Function.listen (/home/students_ae20/m_khattri/public_html/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/students_ae20/m_khattri/public_html/server.js:189:5)
+    at Module._compile (node:internal/modules/cjs/loader:1097:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1149:10)
+    at Module.load (node:internal/modules/cjs/loader:975:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1361:8)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 3099
+}
+
+Node.js v17.1.0

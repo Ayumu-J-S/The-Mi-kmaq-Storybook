@@ -1,0 +1,78 @@
+<!--
+  This is the HTML file for the form layout to upload the files
+  to the database where file is declared as a multi-part form 
+  data to use multer in the node server.js file
+  @author Mahesh Khattri (A00432768)-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<body id="animate-me">
+  <form action="/uploadfile" method="post" enctype="multipart/form-data">
+    <div class="grid">
+      <div id="left-pane">
+        <div class="main-image">
+          <img src="Images/eagle.jpg" alt="Sample photo">
+          <input type="file" name="file1" accept="image/*" required><a class="text">Upload Main Image</a>
+        </div>
+        <p class="chapter-info"><input type=text placeholder=" Author name" name="author" required><a>&nbsp;Author</a></p>
+        <p class="chapter-info"> <input type=text placeholder=" Chapter number" name="chapter" required><a>&nbsp;Chapter</a></p>
+        <p class="chapter-info"><input type=text placeholder=" Title of the chapter" name ="title" required><a>&nbsp;Title</a></p>
+<!-- 
+        <div class="text-files">
+          <input type="file" name="file2" accept=".txt" required>
+          &nbsp;Upload A Story Content Text File In Mik'maq <h4> &nbsp;OR</h4>
+        </div> -->
+        <p> <textarea type="text" name="storyContent" class="text-files" rows=8 placeholder="Write The Story Content In Mik'maq"></textarea></p>
+       
+       
+       
+      
+      </div>
+
+      <div id="right-pane">
+
+        <div class="options">
+          <p> <img src="Images/moose.jpg" draggable=true alt="Sample photo"> </p>
+          <p><img src="Images/beareating.jpg" alt="Sample photo"></p>
+          <p> <img src="Images/beareatingfish.jpg" alt="Sample photo"></p>
+          <p>
+            <input type="file" name="file2" accept="image/*" required><a class="text">Upload Image Option 1</a>
+            <textarea type="text" name="opt1" rows=5 placeholder="Type first option in Mik'maq"></textarea>
+          </p>
+          <p>
+            <input type="file" name="file3" accept="image/*" required><a class="text">Upload Image Option 2</a>
+            <textarea type="text" name="opt2"rows=5 placeholder="Type second option in Mik'maq"></textarea>
+          </p>
+          <p>
+            <input type="file" name="file4" accept="image/*" required><a class="text">Upload Image Option 3</a>
+            <textarea type="text" name="opt3"rows=5 placeholder="Type third option in  Mik'maq"></textarea>
+          </p>
+        </div>
+
+       
+        <p class="audio-file"><input type="file" name="file5" accept="audio/*" required>Upload MP3 Audio File For
+          Option 1</p>
+        <p class="audio-file"><input type="file" name="file6" accept="audio/*" required>Upload MP3 Audio File For
+          Option 2</p>
+        <p class="audio-file"><input type="file" name="file7" accept="audio/*" required>Upload MP3 Audio File For
+          Option 3</p>
+          <p class="audio-file"><input type="file" name="file7" accept="audio/*" required>Upload MP3 Audio File For
+            story content</p>
+          <p> <textarea class="text-files" type="text" name="storyTranslation" rows=8 placeholder="Write The English Translation Of The Story"></textarea></p>
+        
+        <div id="submits"> <button type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>
