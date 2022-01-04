@@ -5,11 +5,13 @@ import "./Storybook.css";
 import StoryPicture from "./imgComponents/StoryPicture.js";
 import StoryText from "./textComponents/StoryText.js";
 import Button from "./buttonComponents/StoryButton.js";
+import ChoiceGrid from "./choiceGrid/ChoiceGrid.js";
+import TextOfChoice from "./textOfChoice/TextOfChoice.js";
 
 function findStoryArr(arr, target) {
     for (let obj of arr) {
         if (obj.title === target) {
-            return obj.filenames;
+            return obj.pages;
         }
     }
     return null;
@@ -23,10 +25,10 @@ const Storybook = (props) => {
     const [pageCount, setPageCount] = useState(1);
 
     useEffect(() => {
-        fetch("/test").then((response) => {
-            let arr = findStoryArr(response.data.arr, storyName);
+        axios.get("/get").then((response) => {
+            let arr = findStoryArr(response.data, storyName);
             setStoryArr(arr);
-            setPageArr(arr[pageCount - 1]);
+            setPageArr(arr[pageCount - 1].filenames);
         });
     }, []);
 
@@ -34,24 +36,41 @@ const Storybook = (props) => {
         <div id="main-pane">
             <div id="left-pane">
                 <StoryPicture
-                    src="https://www.camera-rumors.com/wp-content/uploads/2018/02/sony-a7iii-sample-image-3.jpg"
-                    // src={"linkToTheDir/" + pageArr[0]}
-                    alt={"linkToTheDir/" + pageArr[0]}
-                ></StoryPicture>
-                <StoryText>
-                    {
-                        "The overflow property or\
-                    to add scrollbars when an elemenThe overflow  or\
-                    to add scrollbars when an elemenThe overflow or\
-                    to add scrollto add scro"
+                    src={
+                        "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
+                        pageArr[0]
                     }
-                </StoryText>
+                    alt={
+                        "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
+                        pageArr[0]
+                    }
+                ></StoryPicture>
+                <StoryText>{pageArr[8]}</StoryText>
                 <Button fontSize="24px" margin="15px 10px 25px 10px">
                     English Translation
                 </Button>
                 <Button>Play Audio</Button>
             </div>
-            <div id="right-pane">a</div>
+            <div id="right-pane">
+                <ChoiceGrid
+                    img1={
+                        "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
+                        pageArr[1]
+                    }
+                    choice1={pageArr[9]}
+                    img2={
+                        "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
+                        pageArr[2]
+                    }
+                    choice2={pageArr[10]}
+                    img3={
+                        "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
+                        pageArr[3]
+                    }
+                    choice3={pageArr[11]}
+                ></ChoiceGrid>
+                <TextOfChoice></TextOfChoice>
+            </div>
             <footer>footer</footer>
         </div>
     );

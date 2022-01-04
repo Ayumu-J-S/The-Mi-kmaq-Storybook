@@ -27,7 +27,7 @@ function concatenateArray(arr1, arr2) {
  * @returns numb er of pages in the object
  */
 function countPages(inputObj) {
-    let pagesArr = inputObj.filenames;
+    let pagesArr = inputObj.pages;
     return pagesArr.length;
 }
 
@@ -66,11 +66,12 @@ const BookList = () => {
     // This call back only runs when the components first mount.
     useEffect(() => {
         // Fetch the data from the server.
-        axios.get("/test").then((response) => {
+        axios.get("/get").then((response) => {
             // Add 'numPages' key and value to the objects
-            fixArr(response.data.arr);
+            fixArr(response.data);
+
             // Concatenate with hardcoded story
-            setList(concatenateArray(books, response.data.arr));
+            setList(concatenateArray(books, response.data));
         });
     }, []);
 

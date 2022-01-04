@@ -1,0 +1,14 @@
+#choice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.choice-container {
+    text-align: center;
+    margin: 10px;
+    margin-top: 20px;
+    align-self: flex-start;
+}

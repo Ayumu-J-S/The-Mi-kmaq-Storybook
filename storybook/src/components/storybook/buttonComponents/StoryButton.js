@@ -12,6 +12,7 @@ const StoryButton = styled.button`
     border-radius: 15px;
     box-shadow: 0 9px rgb(216, 212, 212);
     margin: ${({ margin }) => margin || "5px 5px 15px 5px"};
+    width: ${({ width }) => width || "none"};
 
     &:hover {
         background-color: #00d2f7c0;
