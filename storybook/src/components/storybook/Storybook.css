@@ -65,6 +65,12 @@
     }
 }
 
+.center-align-vertical {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px;
+}
+
 footer {
     width: 200%;
     margin: 7px auto 10px auto;

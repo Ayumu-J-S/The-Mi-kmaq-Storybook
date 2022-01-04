@@ -52,24 +52,32 @@ const Storybook = (props) => {
                 <Button>Play Audio</Button>
             </div>
             <div id="right-pane">
-                <ChoiceGrid
-                    img1={
-                        "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
-                        pageArr[1]
-                    }
-                    choice1={pageArr[9]}
-                    img2={
-                        "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
-                        pageArr[2]
-                    }
-                    choice2={pageArr[10]}
-                    img3={
-                        "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
-                        pageArr[3]
-                    }
-                    choice3={pageArr[11]}
-                ></ChoiceGrid>
-                <TextOfChoice></TextOfChoice>
+                <div class="center-align-vertical">
+                    <ChoiceGrid
+                        img1={
+                            "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
+                            pageArr[1]
+                        }
+                        choice1={pageArr[9]}
+                        img2={
+                            "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
+                            pageArr[2]
+                        }
+                        choice2={pageArr[10]}
+                        img3={
+                            "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
+                            pageArr[3]
+                        }
+                        choice3={pageArr[11]}
+                    ></ChoiceGrid>
+                    <TextOfChoice></TextOfChoice>
+                    <Button margin="50px 10px 25px 10px" width="150px">
+                        Previous
+                    </Button>
+                    <Button argin="50px 10px 25px 10px" width="150px">
+                        Next
+                    </Button>
+                </div>
             </div>
             <footer>footer</footer>
         </div>
