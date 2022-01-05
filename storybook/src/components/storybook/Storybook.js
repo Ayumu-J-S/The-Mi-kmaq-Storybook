@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { RoutingContext } from "../../context/Routing.js";
+import { pagesMapping } from "../../context/Routing.js";
 import "./Storybook.css";
 import StoryPicture from "./imgComponents/StoryPicture.js";
 import StoryText from "./textComponents/StoryText.js";
@@ -18,7 +19,7 @@ function findStoryArr(arr, target) {
 }
 
 const Storybook = (props) => {
-    const { storyName } = useContext(RoutingContext);
+    const { storyName, setPage, setChoice } = useContext(RoutingContext);
 
     const [storyArr, setStoryArr] = useState([]);
     const [pageArr, setPageArr] = useState([]);
@@ -31,6 +32,13 @@ const Storybook = (props) => {
             setPageArr(arr[pageCount - 1].filenames);
         });
     }, []);
+
+    useEffect(() => {
+        if (storyArr.length) {
+            if (storyArr[pageCount - 1])
+                setPageArr(storyArr[pageCount - 1].filenames);
+        }
+    }, [pageCount]);
 
     return (
         <div id="main-pane">
@@ -52,7 +60,7 @@ const Storybook = (props) => {
                 <Button>Play Audio</Button>
             </div>
             <div id="right-pane">
-                <div class="center-align-vertical">
+                <div className="center-align-vertical">
                     <ChoiceGrid
                         img1={
                             "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
@@ -71,10 +79,32 @@ const Storybook = (props) => {
                         choice3={pageArr[11]}
                     ></ChoiceGrid>
                     <TextOfChoice></TextOfChoice>
-                    <Button margin="50px 10px 25px 10px" width="150px">
+                    <Button
+                        margin="50px 10px 25px 10px"
+                        width="150px"
+                        onClick={() => {
+                            setChoice("");
+                            if (storyArr[pageCount - 2]) {
+                                setPageCount(pageCount - 1);
+                            } else {
+                                setPage(pagesMapping.home);
+                            }
+                        }}
+                    >
                         Previous
                     </Button>
-                    <Button argin="50px 10px 25px 10px" width="150px">
+                    <Button
+                        argin="50px 10px 25px 10px"
+                        width="150px"
+                        onClick={() => {
+                            setChoice("");
+                            if (storyArr[pageCount]) {
+                                setPageCount(pageCount + 1);
+                            } else {
+                                //Needs to add end page here
+                            }
+                        }}
+                    >
                         Next
                     </Button>
                 </div>
