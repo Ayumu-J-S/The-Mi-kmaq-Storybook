@@ -20,11 +20,18 @@ export const RoutingContext = React.createContext({});
 export default function Router({ children }) {
     //Put pagesMapping.home (section) as default state
     const [page, setPage] = useState(pagesMapping.home);
-    const [storyName, setStoryName] = useState("");
+    const [chapterNum, setChapterNum] = useState(0);
     const [choice, setChoice] = useState("");
 
     //Children of Router will be able to access value
-    const value = { page, setPage, storyName, setStoryName, choice, setChoice };
+    const value = {
+        page,
+        setPage,
+        chapterNum,
+        setChapterNum,
+        choice,
+        setChoice,
+    };
 
     return (
         <RoutingContext.Provider value={value}>

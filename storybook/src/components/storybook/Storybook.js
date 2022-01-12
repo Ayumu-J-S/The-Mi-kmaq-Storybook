@@ -11,7 +11,7 @@ import TextOfChoice from "./textOfChoice/TextOfChoice.js";
 
 function findStoryArr(arr, target) {
     for (let obj of arr) {
-        if (obj.title === target) {
+        if (obj.chapter === target) {
             return obj.pages;
         }
     }
@@ -19,7 +19,9 @@ function findStoryArr(arr, target) {
 }
 
 const Storybook = (props) => {
-    const { storyName, setPage, setChoice } = useContext(RoutingContext);
+    const dataDir = "https://ugdev.cs.smu.ca/~group17/Form/UPLOADS/";
+
+    const { chapterNum, setPage, setChoice } = useContext(RoutingContext);
 
     const [storyArr, setStoryArr] = useState([]);
     const [pageArr, setPageArr] = useState([]);
@@ -27,7 +29,7 @@ const Storybook = (props) => {
 
     useEffect(() => {
         axios.get("/get").then((response) => {
-            let arr = findStoryArr(response.data, storyName);
+            let arr = findStoryArr(response.data, chapterNum);
             setStoryArr(arr);
             setPageArr(arr[pageCount - 1].filenames);
         });
@@ -44,14 +46,8 @@ const Storybook = (props) => {
         <div id="main-pane">
             <div id="left-pane">
                 <StoryPicture
-                    src={
-                        "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
-                        pageArr[0]
-                    }
-                    alt={
-                        "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
-                        pageArr[0]
-                    }
+                    src={dataDir + pageArr[0]}
+                    alt={dataDir + pageArr[0]}
                 ></StoryPicture>
                 <StoryText>{pageArr[8]}</StoryText>
                 <Button fontSize="24px" margin="15px 10px 25px 10px">
@@ -62,20 +58,11 @@ const Storybook = (props) => {
             <div id="right-pane">
                 <div className="center-align-vertical">
                     <ChoiceGrid
-                        img1={
-                            "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
-                            pageArr[1]
-                        }
+                        img1={dataDir + pageArr[1]}
                         choice1={pageArr[9]}
-                        img2={
-                            "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
-                            pageArr[2]
-                        }
+                        img2={dataDir + pageArr[2]}
                         choice2={pageArr[10]}
-                        img3={
-                            "https://ugdev.cs.smu.ca/~m_khattri/UPLOADS/" +
-                            pageArr[3]
-                        }
+                        img3={dataDir + pageArr[3]}
                         choice3={pageArr[11]}
                     ></ChoiceGrid>
                     <TextOfChoice></TextOfChoice>

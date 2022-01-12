@@ -9,7 +9,7 @@ import { RoutingContext } from "../../../context/Routing";
  *  - author: author of the book (string)
  *  - numPages: number of the pages that the story has (number)
  *  - link: the link to direct user to when clicked (string)
- * @author Ayumu Saito
+ *
  * @param {Props} props consists of propeties describes above
  * @returns an anchor link that holds info about the book and
  * when user clicks it, it opens the story.
@@ -17,9 +17,9 @@ import { RoutingContext } from "../../../context/Routing";
 const Book = (props) => {
     // Spread the props to these values
     // props have to have these properties below (spelled exactly)
-    const { title, img, author, numPages, link } = props;
+    const { title, img, author, numPages, link, chapterNum } = props;
 
-    let { setPage, setStoryName } = useContext(RoutingContext);
+    let { setPage, setChapterNum } = useContext(RoutingContext);
 
     // Return a anchor link holding info about the book
     if (link) {
@@ -36,8 +36,8 @@ const Book = (props) => {
             <div
                 id="book"
                 onClick={() => {
+                    setChapterNum(chapterNum);
                     setPage("storybook");
-                    setStoryName(title);
                 }}
             >
                 <img id="bookCover" src={img} alt="" />

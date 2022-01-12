@@ -86,6 +86,7 @@ const BookList = () => {
                             key={book.id}
                             img={book.img}
                             title={book.title}
+                            chapterNum={book.chapter}
                             author={book.author}
                             numPages={book.numPages}
                             link={book.link}
