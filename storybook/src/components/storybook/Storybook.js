@@ -6,6 +6,7 @@ import "./Storybook.css";
 import StoryPicture from "./imgComponents/StoryPicture.js";
 import StoryText from "./textComponents/StoryText.js";
 import Button from "./buttonComponents/StoryButton.js";
+import PopupButton from "./buttonComponents/PopupButton.js";
 import ChoiceGrid from "./choiceGrid/ChoiceGrid.js";
 import TextOfChoice from "./textOfChoice/TextOfChoice.js";
 
@@ -50,10 +51,18 @@ const Storybook = (props) => {
                     alt={dataDir + pageArr[0]}
                 ></StoryPicture>
                 <StoryText>{pageArr[8]}</StoryText>
-                <Button fontSize="24px" margin="15px 10px 25px 10px">
-                    English Translation
+                <PopupButton buttonText="English Translation">
+                    {pageArr[12]}
+                </PopupButton>
+                <Button
+                    onClick={() => {
+                        let audFile = dataDir + pageArr[7];
+                        const aud = new Audio(audFile);
+                        aud.play();
+                    }}
+                >
+                    Play Audio
                 </Button>
-                <Button>Play Audio</Button>
             </div>
             <div id="right-pane">
                 <div className="center-align-vertical">
@@ -64,6 +73,9 @@ const Storybook = (props) => {
                         choice2={pageArr[10]}
                         img3={dataDir + pageArr[3]}
                         choice3={pageArr[11]}
+                        aud1={dataDir + pageArr[4]}
+                        aud2={dataDir + pageArr[5]}
+                        aud3={dataDir + pageArr[6]}
                     ></ChoiceGrid>
                     <TextOfChoice></TextOfChoice>
                     <Button

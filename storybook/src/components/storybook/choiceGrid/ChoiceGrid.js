@@ -5,11 +5,12 @@ import ChoiceImg from "../imgComponents/ChoiceImg.js";
 import Button from "../buttonComponents/StoryButton.js";
 
 const ChoiceGrid = (props) => {
-    const { img1, choice1, img2, choice2, img3, choice3 } = props;
+    const { img1, choice1, aud1, img2, choice2, aud2, img3, choice3, aud3 } =
+        props;
     const choiceArr = [
-        [img1, choice1],
-        [img2, choice2],
-        [img3, choice3],
+        [img1, choice1, aud1],
+        [img2, choice2, aud2],
+        [img3, choice3, aud3],
     ];
 
     let { setChoice } = useContext(RoutingContext);
@@ -26,6 +27,8 @@ const ChoiceGrid = (props) => {
                             width="100%"
                             onClick={() => {
                                 setChoice(choiceElem[1]);
+                                let aud = new Audio(choiceElem[2]);
+                                aud.play();
                             }}
                         >
                             {choiceElem[1]}

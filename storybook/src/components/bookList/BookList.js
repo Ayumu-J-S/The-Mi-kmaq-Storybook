@@ -37,8 +37,11 @@ function countPages(inputObj) {
  * @param {Array} inputArr
  */
 function fixArr(inputArr) {
+    let dataDir = "https://ugdev.cs.smu.ca/~group17/Form/UPLOADS/";
+
     for (let i = 0; i < inputArr.length; i++) {
         inputArr[i]["numPages"] = countPages(inputArr[i]);
+        inputArr[i]["img"] = dataDir + inputArr[i].pages[0].filenames[0];
     }
 }
 
