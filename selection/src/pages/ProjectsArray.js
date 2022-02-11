@@ -58,6 +58,14 @@ const projectsArray = [
         author: "James W. Isaacs, Ayumu Saito, Mahesh Khatri, Raisa Shamatul",
         link: "./storybook",
     },
+	{
+        id: 8,
+        img: "./selection-img/group5.png",
+        title: "Kwe",
+        author: "Sheikh Saad Abdullah, Naziya Tasnim ",
+        page: "embededProj",
+        link: " https://ugdev.cs.smu.ca/~group18",
+    },
 ];
 
 export default projectsArray;
