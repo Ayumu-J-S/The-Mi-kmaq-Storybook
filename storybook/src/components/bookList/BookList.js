@@ -59,7 +59,7 @@ const BookList = () => {
         {
             id: 1,
             img: "../Images/eagle.jpg",
-            title: "A Sunny Day down by the River, work in progress",
+            title: "A Sunny Day down by the River",
             author: "James W. Isaacs",
             numPages: "5",
             link: "http://ugdev.cs.smu.ca/~group17/Pages/Chap2.html",
